@@ -1,10 +1,7 @@
 version: 2
 updates:
-  - package-ecosystem: "nuget" # See documentation for possible values
-    directories:
-      - "/src/TodoAPI"
-      - "/src/TodoAPI.Tests"
-      - "/src/TodoWebapp"
+  - package-ecosystem: "nuget" # .NET dependencies
+    directory: "/todo-api-1/src" # Correct directory containing .sln and .csproj files
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 50
