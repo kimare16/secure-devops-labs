@@ -15,8 +15,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+<<<<<<< HEAD
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.18" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
+=======
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.x.x" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
+>>>>>>> 71bd849 (correcaofinal)
     <InternalsVisibleTo Include="TodoAPI.Tests" />
   </ItemGroup>
 
