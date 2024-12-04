@@ -1,4 +1,8 @@
 fileignoreconfig:
+- filename: .github/workflows/todo-webapp-pr.yml
+  checksum: ba3c6535341017dfdfbbf34fa53a7f7f63fedbfedfb264fb033d6fb22834ea32
+- filename: appsettings.json
+  checksum: 8828ace93a3116d026826939cddd14c6360569fdbb7b7253285d77cd05be5508
 - filename: deploy/manifests/todo-app-api-dep.yaml
   checksum: a6cec6b96a10d53738dd9fa3fb345ae56bc380b431fffd4036e87fd2cd327153
 - filename: deploy/manifests/todo-app-secret.yaml
@@ -191,4 +195,6 @@ fileignoreconfig:
   checksum: 18af03326d61281491ce1542459512b5b38a24dc38e7378c387d91b02dc9088b
 - filename: todo-api-1/src/TodoWebapp/wwwroot/lib/jquery/dist/jquery.min.map
   checksum: 6a6c8b4da3fbffe40c6595556d3ebf9ff12d9fc4d89c4313317e7058654a3a8e
+- filename: todo-api-pr.yml
+  checksum: 5d32742fc4583cde6387d0e3a84f52f2627a4bdb344634675a57a29841ff9605
 version: "1.0"
