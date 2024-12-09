@@ -5,6 +5,8 @@ updates:
       - "todo-api-1/src/TodoAPI"
       - "todo-api-1/src/TodoAPI.Tests"
       - "todo-api-1/src/TodoWebapp"
+      - ".github/workflows/todo-api.yaml"
+      - "deploy/terraform/todo-api/**"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 50
