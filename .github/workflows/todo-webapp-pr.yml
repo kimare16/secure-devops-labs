@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'src/TodoWebapp/**'
+      - 'todo-api-1/src/TodoWebapp/**'
       - '.github/workflows/todo-webapp-pr.yml'
       - 'deploy/terraform/todo-webapp/**'
 
@@ -25,10 +25,10 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Restore dependencies
-        run: dotnet restore src/TodoWebapp/TodoWebapp.csproj
+        run: dotnet restore todo-api-1/src/TodoWebapp/TodoWebapp.csproj
 
       - name: Build
-        run: dotnet build --no-restore src/TodoWebapp/TodoWebapp.csproj
+        run: dotnet build --no-restore todo-api-1/src/TodoWebapp/TodoWebapp.csproj
 
   sca:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Restore dependencies
-        run: dotnet restore src/TodoWebapp/TodoWebapp.csproj
+        run: dotnet restore todo-api-1/src/TodoWebapp/TodoWebapp.csproj
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
@@ -94,7 +94,7 @@ jobs:
       - name: Set up SonarCloud
         uses: sonarsource/sonarcloud-github-action@v3.1.0
         with:
-          projectBaseDir: src/TodoWebapp
+          projectBaseDir: todo-api-1/src/TodoWebapp
           args: >
             -Dsonar.organization=<kimare16>
             -Dsonar.projectKey=<kimare16_secure-devops-labs>
@@ -122,7 +122,7 @@ jobs:
       - name: Build local container
         uses: docker/build-push-action@v2
         with:
-          context: src/TodoWebapp
+          context: todo-api-1/src/TodoWebapp
           tags: todo-webapp:trivy
           push: false
           load: true
