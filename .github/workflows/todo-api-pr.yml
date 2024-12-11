@@ -4,8 +4,8 @@ on:
   pull_request:
     branches: [ main ]
     paths:
-      - 'src/TodoAPI/**'
-      - 'src/TodoAPI.Tests/**'
+      - 'todo-api-1/src/TodoAPI/**'
+      - 'todo-api-1/src/TodoAPI.Tests/**'
       - '.github/workflows/todo-api-pr.yml'
 
 jobs:
@@ -26,16 +26,16 @@ jobs:
 
       - name: Restore dependencies
         run: |
-          dotnet restore src/TodoAPI/TodoAPI.csproj
-          dotnet restore src/TodoAPI.Tests/TodoAPI.Tests.csproj
+          dotnet restore todo-api-1/src/TodoAPI/TodoAPI.csproj
+          dotnet restore todo-api-1/src/TodoAPI.Tests/TodoAPI.Tests.csproj
 
       - name: Build
         run: |
-          dotnet build --no-restore src/TodoAPI/TodoAPI.csproj
-          dotnet build --no-restore src/TodoAPI.Tests/TodoAPI.Tests.csproj
+          dotnet build --no-restore todo-api-1/src/TodoAPI/TodoAPI.csproj
+          dotnet build --no-restore todo-api-1/src/TodoAPI.Tests/TodoAPI.Tests.csproj
 
       - name: Test
-        run: dotnet test --no-build src/TodoAPI.Tests/TodoAPI.Tests.csproj --verbosity normal --logger "trx;LogFileName=test-results.trx"
+        run: dotnet test --no-build todo-api-1/src/TodoAPI.Tests/TodoAPI.Tests.csproj --verbosity normal --logger "trx;LogFileName=test-results.trx"
 
       - name: Test Report
         uses: dorny/test-reporter@v1
@@ -64,8 +64,8 @@ jobs:
 
       - name: Restore dependencies
         run: |
-          dotnet restore src/TodoAPI/TodoAPI.csproj
-          dotnet restore src/TodoAPI.Tests/TodoAPI.Tests.csproj
+          dotnet restore todo-api-1/src/TodoAPI/TodoAPI.csproj
+          dotnet restore todo-api-1/src/TodoAPI.Tests/TodoAPI.Tests.csproj
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
@@ -111,7 +111,7 @@ jobs:
       - name: Set up SonarCloud
         uses: sonarsource/sonarcloud-github-action@v3.1.0
         with:
-          projectBaseDir: src/TodoAPI
+          projectBaseDir: todo-api-1/src/TodoAPI
           args: >
             -Dsonar.organization=<your_sonar_org_key>
             -Dsonar.projectKey=<your_sonar_project_key>
@@ -139,7 +139,7 @@ jobs:
       - name: Build local container
         uses: docker/build-push-action@v2
         with:
-          context: src/TodoAPI
+          context: todo-api-1/src/TodoAPI
           tags: todo-api:trivy
           push: false
           load: true
