@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: .github/workflows/todo-api-pr.yml
+  checksum: 86ebcf5bf19b265feed699f8c44facb36c46aff25adc55e731b293e7c88df850
 - filename: .github/workflows/todo-webapp-pr.yml
   checksum: ba3c6535341017dfdfbbf34fa53a7f7f63fedbfedfb264fb033d6fb22834ea32
 - filename: appsettings.json
@@ -9,6 +11,10 @@ fileignoreconfig:
   checksum: 5d0fba4c899970be4128ad173c80259c955d4e2d32d0dd06624dd31e9974dee6
 - filename: deploy/manifests/todo-app-webapp-dep.yaml
   checksum: 2798694bc0233cd8349c3c23ee88a985ebfc0d4baf3a931d0939e7e7901a6786
+- filename: deploy/terraform/todo-api/main.tf
+  checksum: 7626e97416690eed6bb2a2b85a83f9f29fd9280d3401464caa368a2017773af8
+- filename: deploy/terraform/todo-webapp/main.tf
+  checksum: 16e4323d445cb074e84db04af88b98382bec43bc258429a14746d3a11a41daa8
 - filename: docker-compose.override.yml
   checksum: d3c2b476f3e85717dd4ac327991ba18577c0c50cdb3277421634cc2861730b9f
 - filename: src/TodoAPI/Migrations/20220608160823_InitDb.cs
